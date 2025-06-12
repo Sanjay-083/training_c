@@ -4,7 +4,7 @@ void main()
 {
     char val = 'Z';
 
-    if ((val >= 65 && val <= 90) || (val >= 97 && val <= 127))
+    if ((val >= 65 && val <= 90) || (val >= 97 && val <= 122))
     {
         printf("Alphabet \n");
 
