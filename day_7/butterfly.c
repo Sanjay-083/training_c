@@ -1,43 +1,42 @@
 #include <stdio.h>
+
 void main()
 {
     int n = 5;
-    int i, j;
-    n = (n * 2) + 1;
-    for (i = 1; i <= n; i++)
+    int i, j, k;
+    n = (n * 2) + 1; 
+    for (i = 0; i < n; i++)
     {
-        if (i <= (n / 2 )+ 1)
+        if (i <= n / 2)
         {
-            for (j = 1; j <= i; j++)
+            for (j = 0; j < i+1; j++)
             {
-                printf(" *");
+                printf("*");
             }
-            for (int s = 1; s <= n - (2 * i); s++)
+            for (j = 0; j < 2 * (n / 2 - i); j++)
             {
-                printf("  ");
+                printf(" ");
             }
-            for (int k = 1; k <= i; k++)
+            for (k = 0; k < i+1; k++)
             {
-                printf(" *");
+                printf("*");
             }
-
-            printf("\n");
         }
         else
         {
-            for (j = 1; j <= n - i + 1; j++)
+            for (j = 0; j < n - i; j++)
             {
-                printf(" *");
+                printf("*");
             }
-            for (int s = 1; s < 2 * i - (n + 1); s++)
+            for (j = 0; j < 2 * (i - n / 2); j++)
             {
-                printf("  ");
+                printf(" ");
             }
-            for (int k = 1; k <= n - i + 1; k++)
+            for (k = 0; k < n - i; k++)
             {
-                printf(" *");
+                printf("*");
             }
-            printf("\n");
         }
+        printf("\n");
     }
 }
