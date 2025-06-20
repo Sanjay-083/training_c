@@ -30,7 +30,7 @@ void main()
             rev2 = rev2 * 10 + d;
             n2 = n2 / 10;
         }
-        if (rev2 == ori2)
+        if (rev2 == ori2)   
         {
             printf("%d", ori2);
             break;
