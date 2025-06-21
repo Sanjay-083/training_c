@@ -17,7 +17,6 @@ void  main()
         d = num / div;
         num = num % div;
         div = div / 10;
-
         if (d == 2 || d == 3 || d == 5 || d == 7)
             printf("%d\t", d);
     }
