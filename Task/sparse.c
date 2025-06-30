@@ -3,7 +3,6 @@
 int main()
 {
     int n, count = 0;
-
     printf("Enter number of rows and columns: ");
     scanf("%d", &n);
     int mat[n][n];

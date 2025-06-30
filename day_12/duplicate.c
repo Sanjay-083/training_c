@@ -17,6 +17,7 @@ void main()
         {
             if (arr[i] == arr[j])
             {
+                
                 count = 1;
                 break;
             }

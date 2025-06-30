@@ -1,7 +1,7 @@
 #include <stdio.h>
 void main()
 {
-    int val1 = 123, val2 = 456;
+    int val1 = 10001, val2 = 456;
     int temp = val2;
     int div=1;
     while (temp > 10)//reverse forward
