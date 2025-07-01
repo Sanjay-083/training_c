@@ -1,19 +1,25 @@
 #include <stdio.h>
-void main()
+
+int main()
 {
-    int val = 124;
+    int val;
+    scanf("%d", &val);
+
     int sum = 0;
-    while (val > 0)
+
+    for (int i = 1; i <= val; i++)
     {
-  
-        int num = val % 10;
-        int pro = 1;
-        for (int i = num; i > 0; i--)
+        int fact = 1;
+
+        for (int j = 1; j <= i; j++)
         {
-            pro *= i;
+            fact *= j;
         }
-        sum += pro;
-        val /= 10;
+
+        sum += fact;
     }
+
     printf("%d\n", sum);
+
+    return 0;
 }
