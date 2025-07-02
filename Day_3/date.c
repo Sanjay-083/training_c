@@ -9,13 +9,11 @@ int isValidDate(int d, int m, int y) {
 
     int daysInMonth[] = {31, 28, 31, 30, 31, 30, 
                          31, 31, 30, 31, 30, 31};
-
     if (isLeapYear(y))
         daysInMonth[1] = 29;
 
     if (d > daysInMonth[m - 1])
         return 0;
-
     return 1;
 }
 
