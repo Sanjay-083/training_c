@@ -1,23 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+/*circular linked list creation and traversal */
 struct Node
 {
     int data;
     struct Node *next;
-    struct Node *prev;
 };
 void main()
 {
     struct Node *head = NULL;
     struct Node *createNode = NULL;
     struct Node *new = NULL;
-    struct Node *prev = NULL;
     int node;
-
     printf("Enter the Number of Nodes: ");
     scanf("%d", &node);
-
     for (int i = 0; i < node; i++)
     {
         createNode = (struct Node *)malloc(sizeof(struct Node));
@@ -26,20 +22,22 @@ void main()
         scanf("%d", &value);
         createNode->data = value;
         createNode->next = NULL;
-        createNode->prev = NULL;
         if (head == NULL)
         {
             head = createNode;
         }
+        if (createNode->next == NULL)
+        {
+            createNode->next = head;
+        }
         else
         {
             new->next = createNode;
-            createNode->prev = new;
         }
         new = createNode;
     }
     struct Node *temp = head;
-    while (temp != NULL)
+    while (temp!= NULL)
     {
         printf("%d", temp->data);
         temp = temp->next;
