@@ -1,13 +1,13 @@
 #include <stdio.h>
+int isfull();
+int isempty();
 int size = 5;
 int top = -1;
 int stack[5];
-
 void push(int val)
 {
-    if (top == size - 1)
+    if (isfull())
     {
-        printf("The Stack is Overflow\n");
         return;
     }
     stack[++top] = val;
@@ -28,9 +28,8 @@ void dis()
 }
 void pop()
 {
-    if (top == -1)
+    if (isempty())
     {
-        printf("Stack Underflow\n");
         return;
     }
     printf("\nPopped element: %d\n", stack[top--]);
@@ -39,20 +38,24 @@ void peek()
 {
     printf("\nPeek element: %d", stack[top]);
 }
-void isempty()
+int isempty()
 {
     if (top == -1)
     {
         printf("Stack is empty\n");
+        return 1;
     }
 }
-void isfull()
+int isfull()
 {
     if (top == size - 1)
     {
         printf("Stack is Overflow\n");
+        return 1;
     }
+    return 0;
 }
+
 int main()
 {
     push(10);
@@ -65,7 +68,25 @@ int main()
     peek();
     pop();
     dis();
-    isempty();
-    isfull();
     return 0;
+}
+//deleting an element in a stack using a position
+void delete_at_position(int pos)
+{
+    if (isempty())
+    {
+        printf("Stack is empty\n");
+        return;
+    }
+    if (pos < 0 || pos > top)
+    {
+        printf("Invalid position\n");
+        return;
+    }
+    printf("Deleting element %d at position %d\n", stack[pos], pos);
+    for (int i = pos; i < top; i++)
+    {
+        stack[i] = stack[i + 1];
+    }
+    top--;
 }
