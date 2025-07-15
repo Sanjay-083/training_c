@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-
 struct Node
 {
     int data;
@@ -14,10 +13,8 @@ void main()
     struct Node *new = NULL;
     struct Node *prev = NULL;
     int node;
-
     printf("Enter the Number of Nodes: ");
     scanf("%d", &node);
-
     for (int i = 0; i < node; i++)
     {
         createNode = (struct Node *)malloc(sizeof(struct Node));

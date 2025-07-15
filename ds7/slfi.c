@@ -25,7 +25,6 @@ int main()
         scanf("%d", &value);
         createNode->data = value;
         createNode->next = NULL;
-
         if (head == NULL)
         {
             head = createNode;
@@ -58,7 +57,6 @@ int main()
         {
             temp = temp->next;
         }
-
         if (temp == NULL)
         {
             printf("Invalid position!");

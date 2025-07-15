@@ -20,7 +20,7 @@ void main()
     // printf("%p",head->next);
     // /*
     //  The Above Code is used to create a Node and Head then insert a Data
-    // */w
+    // */
     int node;
     printf("Enter the Number of Nodes: ");
     scanf("%d", &node);
