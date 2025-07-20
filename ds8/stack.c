@@ -71,7 +71,7 @@ int main()
     return 0;
 }
 //deleting an element in a stack using a position
-void delete_at_position(int pos)
+void delete(int pos)
 {
     if (isempty())
     {
@@ -83,10 +83,10 @@ void delete_at_position(int pos)
         printf("Invalid position\n");
         return;
     }
-    printf("Deleting element %d at position %d\n", stack[pos], pos);
     for (int i = pos; i < top; i++)
     {
         stack[i] = stack[i + 1];
     }
+    printf("Deleting element %d \n", stack[pos]);
     top--;
 }
