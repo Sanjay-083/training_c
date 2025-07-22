@@ -12,7 +12,6 @@ int main()
     }
     printf("\nSum of digits: %d\n", sum);
 }
-
 // binary to decimal conversion
 // 0b1101 to decimal
 // 1*2^3 + 1*2^2 + 0*2^1 + 1*2^0 = 8 + 4 + 0 + 1 = 13

@@ -5,64 +5,105 @@ int front = -1, rear = -1;
 
 int isFull()
 {
-    if (front == rear + 1)
-    {
-        return 1;
-    }
-    else
-    {
-        return 0;
-    }
+    return (front == (rear + 1) % size);
 }
-
+int isEmpty()
+{
+    return (front == -1);
+}
 void insertAtRear(int val)
 {
-    if (isFull() || front == 0)
+    if (isFull())
     {
-        printf("The Queue is Full");
+        printf("The Queue is Full\n");
         return;
     }
-    if (front == -1)
+    if (isEmpty()) 
     {
         front = 0;
         rear = 0;
     }
-    else if (rear == size - 1)
-    {
-        rear = 0;
-    }
     else
     {
-        rear++;
+        rear = (rear + 1) % size; 
     }
     deque[rear] = val;
 }
-
 void insertAtFront(int val)
 {
     if (isFull())
     {
-        printf("The Queue is Full");
+        printf("The Queue is Full\n");
         return;
     }
-    if (front == 0 || front == -1)
+    if (isEmpty())
     {
-        front = size - 1;
+        front = 0;
+        rear = 0;
     }
     else
     {
-        front--;
+        front = (front  + size-1) % size;
     }
     deque[front] = val;
 }
-
-int main()
+void displayQueue()
 {
-    int n;
-    int val;
+    if (isEmpty())
+    {
+        printf("Queue is empty\n");
+        return;
+    }
+    int i = front;
     while (1)
     {
-        printf(" 1)Insert At Rear\n 2)Insert At front\n 3)Display\n 4)Pop from Rear\n 5)Pop from Front\n");
+        printf("%d ", deque[i]);
+        if (i == rear)
+            break;
+        i = (i + 1) % size;
+    }
+    printf("\n");
+}
+void popFront()
+{
+    if (isEmpty())
+    {
+        printf("Queue is empty\n");
+        return;
+    }
+    if (front == rear)
+    {
+        front = -1;
+        rear = -1;
+    }
+    else
+    {
+        front = (front + 1) % size;
+    }
+}
+void popRear()
+{
+    if (isEmpty())
+    {
+        printf("Queue is empty\n");
+        return;
+    }
+    if (front == rear)
+    {
+        front = -1;
+        rear = -1;
+    }
+    else
+    {
+        rear = (rear - 1 + size) % size;
+    }
+}
+int main()
+{
+    int n, val;
+    while (1)
+    {
+        printf("1) Insert At Rear\n2) Insert At Front\n3) Display\n4) Pop from Rear\n5) Pop from Front\n");
         printf("Enter your choice: ");
         scanf("%d", &n);
         switch (n)
@@ -88,6 +129,5 @@ int main()
             break;
         }
     }
-
     return 0;
 }

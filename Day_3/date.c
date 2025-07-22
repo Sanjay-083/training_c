@@ -3,7 +3,6 @@
 int isLeapYear(int year) {
     return ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0));
 }
-
 int isValidDate(int d, int m, int y) {
     if (y < 1 || m < 1 || m > 12 || d < 1) return 0;
 
@@ -16,7 +15,6 @@ int isValidDate(int d, int m, int y) {
         return 0;
     return 1;
 }
-
 int main() {
     int day, month, year;
     printf("Enter date (dd/mm/yyyy): ");
